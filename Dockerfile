@@ -5,14 +5,14 @@ FROM node:16-alpine
 # But in docker run command refer the docker socket to host machine so avoid docker in docker scenario
 RUN apk add --update docker openrc
 
-ENV PORT="7000"
+ENV PORT="7300"
 
 # Product
 ENV PRODUCT_NAME="Capstone Monitoring Service"
-ENV PRODUCT_LINK="https://cnn.com"
+ENV PRODUCT_LINK="https://helpmybabies.com:7200"
 
 # Metrics Dashboard Button Link
-ENV DASHBOARD_LINK="https://cnn.com"
+ENV DASHBOARD_LINK="https://helpmybabies.com:7200"
 
 
 # create destination directory
@@ -25,7 +25,7 @@ WORKDIR /home/app
 # will execute npm install in /home/app because of WORKDIR
 RUN npm install
 
-# expose 7000 on container
-EXPOSE 7000
+# expose 7300 on container
+EXPOSE 7300
 
 CMD [ "npm", "run", "start" ]

@@ -1,16 +1,18 @@
 # Dockerfile
-FROM node:21-bullseye
+FROM node:15-alpine3.13
 
 # Install docker terminal in the container
 # But in docker run command refer the docker socket to host machine so avoid docker in docker scenario
-RUN apt update
-RUN apt install apt-transport-https ca-certificates gnupg2 software-properties-common -y
-RUN $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-RUN $ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-RUN apt update
-RUN apt-cache policy docker-ce
-RUN apt install docker-ce -y
-RUN systemctl status docker
+RUN apk add --update docker openrc
+
+# RUN apt update
+# RUN apt install apt-transport-https ca-certificates gnupg2 software-properties-common -y
+# RUN $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+# RUN $ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+# RUN apt update
+# RUN apt-cache policy docker-ce
+# RUN apt install docker-ce -y
+# RUN systemctl status docker
 
 ENV PORT="7300"
 

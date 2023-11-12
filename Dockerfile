@@ -14,7 +14,7 @@ RUN apk add --update docker openrc
 # RUN apt install docker-ce -y
 # RUN systemctl status docker
 
-ENV PORT="7300"
+ENV PORT="7000"
 
 # Product
 ENV PRODUCT_NAME="Capstone Monitoring Service"
@@ -34,7 +34,7 @@ WORKDIR /home/app
 # will execute npm install in /home/app because of WORKDIR
 RUN npm install
 
-# expose 7300 on container
-EXPOSE 7300
+# expose 7000 on container
+EXPOSE 7000
 
 CMD [ "npm", "run", "start" ]

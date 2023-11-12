@@ -1,9 +1,9 @@
 # Dockerfile
-FROM node:21-bullseye
+FROM node:21-bullseye-slim
 
 # Install docker terminal in the container
 # But in docker run command refer the docker socket to host machine so avoid docker in docker scenario
-RUN apk add --update docker openrc
+RUN apt-get --update docker openrc
 
 ENV PORT="7300"
 

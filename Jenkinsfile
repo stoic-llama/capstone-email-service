@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        version = '1.2'
+        version = '1.3'
         containerName = 'capstone-email-service'
     }
 
@@ -71,7 +71,7 @@ pipeline {
 
                     sh '''
                         ssh -i /var/jenkins_home/.ssh/website_deploy_rsa_key ${WEBSITE} "docker run -d \
-                        -p 7300:7300 \
+                        -p 7000:7000 \
                         --rm \
                         -e EMAIL=${MAILEREMAIL} \
                         -e PASSWORD1=${MAILERPASS1} \

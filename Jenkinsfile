@@ -62,7 +62,7 @@ pipeline {
                 // Note: need --rm when docker run.. so that docker stop can kill it cleanly
                 withCredentials([
                     string(credentialsId: 'website', variable: 'WEBSITE'),
-                    // string(credentialsId: 'mailerEmail', variable: 'MAILEREMAIL'),
+                    string(credentialsId: 'mailerEmail', variable: 'MAILEREMAIL'),
                     // string(credentialsId: 'mailerPass', variable: 'MAILERPASS'),
                 ]) {
 

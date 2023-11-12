@@ -63,7 +63,10 @@ pipeline {
                 withCredentials([
                     string(credentialsId: 'website', variable: 'WEBSITE'),
                     string(credentialsId: 'mailerEmail', variable: 'MAILEREMAIL'),
-                    string(credentialsId: 'mailerPass', variable: 'MAILERPASS'),
+                    string(credentialsId: 'mailerPass1', variable: 'MAILERPASS1'),
+                    string(credentialsId: 'mailerPass2', variable: 'MAILERPASS2'),
+                    string(credentialsId: 'mailerPass3', variable: 'MAILERPASS3'),
+                    string(credentialsId: 'mailerPass4', variable: 'MAILERPASS4'),
                 ]) {
 
                     sh '''
@@ -71,7 +74,7 @@ pipeline {
                         -p 7300:7300 \
                         --rm \
                         -e EMAIL=${MAILEREMAIL} \
-                        -e PASSWORD=${MAILERPASS} \
+                        -e PASSWORD="${MAILERPASS1} ${MAILERPASS2} ${MAILERPASS3} ${MAILERPASS4}" \
                         --name ${containerName} \
                         --network monitoring \
                         -v /var/run/docker.sock:/var/run/docker.sock \

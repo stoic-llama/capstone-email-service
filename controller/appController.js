@@ -14,7 +14,7 @@ const sendStatus = (req, res) => {
         service : 'gmail',
         auth : {
             user: process.env.EMAIL,
-            pass: process.env.PASSWORD
+            pass: `${process.env.PASSWORD1} ${process.env.PASSWORD2} ${process.env.PASSWORD3} ${process.env.PASSWORD4}`
         }
     }
 

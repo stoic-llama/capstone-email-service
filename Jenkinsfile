@@ -67,7 +67,7 @@ pipeline {
                 ]) {
 
                     sh '''
-                        ssh -i /var/jenkins_home/.ssh/website_deploy_rsa_key ${WEBSITE} "docker image pull stoicllama/${containerName}:${version}
+                        ssh -i /var/jenkins_home/.ssh/website_deploy_rsa_key ${WEBSITE} "docker image pull pnbr:latest
                         docker run -d \
                         -p 7300:7300 \
                         --rm \

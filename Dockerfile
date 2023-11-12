@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:16-alpine
+FROM node:21-alpine
 
 # Install docker terminal in the container
 # But in docker run command refer the docker socket to host machine so avoid docker in docker scenario

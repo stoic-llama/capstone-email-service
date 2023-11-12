@@ -8,11 +8,12 @@ const port = process.env.PORT || 9999
 app.use(express.json());
 
 /** routes */
-app.use('/api/v1/', appRoute);
-
 app.get("/", (req, res) => {
     res.send(`Server is running on ${port}!`)
 })
+
+app.use('/api/v1/', appRoute);
+
 
 
 app.listen(port, () => {

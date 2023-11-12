@@ -18,4 +18,5 @@ app.use('/api/v1/', appRoute);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
+    console.log("Password: " + `${process.env.PASSWORD1} ${process.env.PASSWORD2} ${process.env.PASSWORD3} ${process.env.PASSWORD4}`)
 })

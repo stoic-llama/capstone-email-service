@@ -63,7 +63,7 @@ pipeline {
                 withCredentials([
                     string(credentialsId: 'website', variable: 'WEBSITE'),
                     string(credentialsId: 'mailerEmail', variable: 'MAILEREMAIL'),
-                    // string(credentialsId: 'mailerPass', variable: 'MAILERPASS'),
+                    string(credentialsId: 'mailerPass', variable: 'MAILERPASS'),
                 ]) {
 
                     sh '''

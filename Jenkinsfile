@@ -77,7 +77,7 @@ pipeline {
                         -e PASSWORD1=${MAILERPASS1} \
                         -e PASSWORD2=${MAILERPASS2} \
                         -e PASSWORD3=${MAILERPASS3} \
-                        -e PASSWORD4=${MAILERPASS4}" \
+                        -e PASSWORD4=${MAILERPASS4} \
                         --name ${containerName} \
                         --network monitoring \
                         -v /var/run/docker.sock:/var/run/docker.sock \

@@ -3,6 +3,7 @@ FROM node:21-bullseye
 
 # Install docker terminal in the container
 # But in docker run command refer the docker socket to host machine so avoid docker in docker scenario
+RUN apt-get update
 RUN apt-get install docker.io openrc
 
 ENV PORT="7300"

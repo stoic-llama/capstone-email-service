@@ -48,11 +48,11 @@ pipeline {
                 echo 'deploying the application...' 
                 
                 withCredentials([
-                    string(credentialsId: 'website', variable: 'WEBSITE'),
+                    string(credentialsId: 'monitoring', variable: 'MONITORING'),
                 ]) {
                     script {
                         // Use SSH to check if the container exists
-                        def containerExists = sh(script: 'ssh -i /var/jenkins_home/.ssh/website_deploy_rsa_key "${WEBSITE}" docker stop "${containerName}"', returnStatus: true)
+                        def containerExists = sh(script: 'ssh -i /var/jenkins_home/.ssh/monitoring_deploy_rsa_key "${MONITORING}" docker stop "${containerName}"', returnStatus: true)
 
                         echo "containerExists: $containerExists"
                     }
@@ -61,7 +61,7 @@ pipeline {
                 // Use the withCredentials block to access the credentials
                 // Note: need --rm when docker run.. so that docker stop can kill it cleanly
                 withCredentials([
-                    string(credentialsId: 'website', variable: 'WEBSITE'),
+                    string(credentialsId: 'monitoring', variable: 'MONITORING'),
                     string(credentialsId: 'mailerEmail', variable: 'MAILEREMAIL'),
                     string(credentialsId: 'mailerPass1', variable: 'MAILERPASS1'),
                     string(credentialsId: 'mailerPass2', variable: 'MAILERPASS2'),
@@ -70,7 +70,7 @@ pipeline {
                 ]) {
 
                     sh '''
-                        ssh -i /var/jenkins_home/.ssh/website_deploy_rsa_key ${WEBSITE} "docker run -d \
+                        ssh -i /var/jenkins_home/.ssh/monitoring_deploy_rsa_key ${MONITORING} "docker run -d \
                         -p 7000:7000 \
                         --rm \
                         -e EMAIL=${MAILEREMAIL} \

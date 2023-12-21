@@ -18,10 +18,10 @@ ENV PORT="7000"
 
 # Product
 ENV PRODUCT_NAME="Capstone Monitoring Service"
-ENV PRODUCT_LINK="http://helpmybabies.com:7200"
+ENV PRODUCT_LINK="http://capstonemonitoring.xyz:7200"
 
 # Metrics Dashboard Button Link
-ENV DASHBOARD_LINK="http://helpmybabies.com:7200"
+ENV DASHBOARD_LINK="http://capstonemonitoring.xyz:7200"
 
 
 # create destination directory

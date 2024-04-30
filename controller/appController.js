@@ -60,7 +60,9 @@ const sendStatus = (req, res) => {
             msg: "you should receive an email"
         })
     }).catch(error => {
-        return res.status(500).json({ error })
+        return res.status(500).json({ 
+            msg: "email not sent: " + error 
+        })
     })
 }
 
